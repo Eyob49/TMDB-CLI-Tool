@@ -208,3 +208,8 @@ __marimo__/
 .replit 
 replit.nix
 
+.env
+__pycache__/
+*.pyc
+
+
