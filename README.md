@@ -2,6 +2,10 @@
 
 A simple Python command-line tool to fetch and display movies from [The Movie Database (TMDb)](https://www.themoviedb.org/). This project uses the TMDb API and supports different movie categories such as popular, top rated, upcoming, and now playing.
 
+![Python](https://img.shields.io/badge/Python-3.9-blue)
+![License: MIT](https://img.shields.io/badge/License-MIT-green)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)
+
 ---
 
 ✨ Features
