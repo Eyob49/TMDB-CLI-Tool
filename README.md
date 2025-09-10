@@ -9,10 +9,10 @@ A simple Python command-line tool to fetch and display movies from [The Movie Da
 ---
 
 ✨ Features
-- Fetch movies by category (popular, top_rated, upcoming, now_playing).
-- Displays title, release date, and rating in a clean format.
-- Handles invalid categories gracefully.
-- Secure API key handling using environment variables.
+🎥 Fetch movies by category (popular, top_rated, upcoming, now_playing).
+📆 Displays title, release date, and rating in a clean format.
+🚫 Handles invalid categories gracefully.
+🔐 Secure API key handling using environment variables.
 
 ---
 
@@ -26,14 +26,18 @@ Install dependencies:
 pip install -r requirements.txt
 
 Set your TMDB API key as an environment variable:
+
 export API_KEY = "your_api_key_here" # for Linux/Mac
+
 setx API_KEY "your_api_key_here"   # for Windows
 
 ▶️ Usage 
 Run the script with a category:
-  python main.py --type popular
+
+python main.py --type popular
 
 Example output:
+
 🎬 Title: War of the Worlds
 📅 Release: 2025-07-29
 ⭐ Rating: 4.3
