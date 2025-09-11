@@ -69,6 +69,6 @@ def get_movies(category):
   sorted_data = sorted(data["results"], key=lambda item: item[user_choice])
   
   for i,movie in enumerate(sorted_data):
-         print(f'{i+1}.🎬 Title: {movie["title"]}\n  .📆 Release: {movie["release_date"]}\n  .⭐️ Rating: {movie["vote_average"]}\n')
+         print(f'{i+1}.🎬 Title: {movie["title"]}\n .📆 Release: {movie["release_date"]}\n .⭐️ Rating: {movie["vote_average"]}\n')
 
 get_movies(args.type)
