@@ -22,25 +22,25 @@ A simple Python command-line tool to fetch and display movies from [The Movie Da
  - git clone https://github.com/Eyob49/TMDB-CLI-Tool.git
  - cd TMDB-CLI-Tool
 
-Install dependencies:
+2.Install dependencies:
 - pip install -r requirements.txt
 
-Set your TMDB API key as an environment variable:
+3.Set your TMDB API key as an environment variable:
 
-export API_KEY = "your_api_key_here" # for Linux/Mac
+- export API_KEY = "your_api_key_here" # for Linux/Mac
 
-setx API_KEY "your_api_key_here"   # for Windows
+- setx API_KEY "your_api_key_here"   # for Windows
 
 ▶️ Usage 
 Run the script with a category:
 
-python main.py --type popular
+- python main.py --type popular
 
-Example output:
+- Example output:
 
-🎬 Title: War of the Worlds
-📅 Release: 2025-07-29
-⭐ Rating: 4.3
+- 🎬 Title: War of the Worlds
+- 📅 Release: 2025-07-29
+- ⭐ Rating: 4.3
 
 ⚠️ Valid Categories
 • popular
