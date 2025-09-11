@@ -15,12 +15,28 @@ args = parser.parse_args()
 
 def get_movies(category):
   
-  VALID_CATEGORIES = ["popular", "top_rated", "upcoming", "now_playing"]
+  VALID_CATEGORIES = { 
+                       "p": "popular",
+                      "tr": "top_rated",
+                      "up": "upcoming",
+                      "np": "now_playing"
+}
   
-  if category not in VALID_CATEGORIES:
-    print(f"⚠️ Invalid category: {category}. Try one of {', '.join(VALID_CATEGORIES)}")
-    return
-  
+  if category in VALID_CATEGORIES.keys():
+    category = VALID_CATEGORIES.get(category)
+
+  elif category in VALID_CATEGORIES.values():
+     category = category
+
+  else:
+   if len(category) <= 2:
+
+    print(f"⚠️ Invalid category short key: {category}. Try one of {', '.join(VALID_CATEGORIES.keys())}")
+
+   else:
+     print(f"⚠️ Invalid category: {category}. Try one of {', '.join(VALID_CATEGORIES.values())}")
+   return
+
   url = f"https://api.themoviedb.org/3/movie/{category}?api_key={api_key}"
 
   try:
