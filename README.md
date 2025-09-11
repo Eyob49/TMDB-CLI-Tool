@@ -38,7 +38,7 @@ Run the script with a category:
 
 - Example output:
 
--   🎬 Title: War of the Worlds
+  -   🎬 Title: War of the Worlds
 
     📅 Release: 2025-07-29
 
