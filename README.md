@@ -10,17 +10,17 @@ A simple Python command-line tool to fetch and display movies from [The Movie Da
 
 ✨ Features
  - 🎥 Fetch movies by category (popular, top_rated, upcoming, now_playing).
-📆 Displays title, release date, and rating in a clean format.
-🚫 Handles invalid categories gracefully.
-🔐 Secure API key handling using environment variables.
+ - 📆 Displays title, release date, and rating in a clean format.
+- 🚫 Handles invalid categories gracefully.
+- 🔐 Secure API key handling using environment variables.
 
 ---
 
 🛠️ Installation
 
 1. Clone this repository:
-   git clone https://github.com/Eyob49/TMDB-CLI-Tool.git
-   cd TMDB-CLI-Tool
+  - git clone https://github.com/Eyob49/TMDB-CLI-Tool.git\n
+  cd TMDB-CLI-Tool
 
 Install dependencies:
 pip install -r requirements.txt
