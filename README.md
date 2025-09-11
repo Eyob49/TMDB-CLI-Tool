@@ -40,9 +40,9 @@ Run the script with a category:
 
   -   🎬 Title: War of the Worlds
 
-    📅 Release: 2025-07-29
+      📅 Release: 2025-07-29
 
-    ⭐ Rating: 4.3
+      ⭐ Rating: 4.3
 
 ⚠️ Valid Categories
 - popular
@@ -57,7 +57,7 @@ Run the script with a category:
 - Export results to JSON/CSV file
 
 📜 License
-This project is licensed under the MIT License.
+   This project is licensed under the MIT License.
 
 
 
