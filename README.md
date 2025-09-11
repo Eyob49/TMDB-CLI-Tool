@@ -57,7 +57,7 @@ Run the script with a category:
 - Export results to JSON/CSV file
 
 📜 License
-   This project is licensed under the MIT License.
+- This project is licensed under the MIT License.
 
 
 
