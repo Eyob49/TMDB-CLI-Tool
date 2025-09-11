@@ -58,7 +58,17 @@ def get_movies(category):
         print("⚠️ No movies found for this category.")
         return
   
-  for movie in data["results"]:
-         print(f' 🎬 Title: {movie["title"]}\n 📆 Release: {movie["release_date"]}\n ⭐️ Rating: {movie["vote_average"]}\n')
-        
+  category_keys = ["title","release_date", "vote_average"]
+  
+  while True:
+      user_choice = input("Choose how to sort the movies (title, release_date, or vote_average): ").strip().lower()
+      if user_choice in category_keys:
+          break
+      print("Please be sure you chose title, release_date or vote_average")
+  
+  sorted_data = sorted(data["results"], key=lambda item: item[user_choice])
+  
+  for i,movie in enumerate(sorted_data):
+         print(f'{i+1}.🎬 Title: {movie["title"]}\n  .📆 Release: {movie["release_date"]}\n  .⭐️ Rating: {movie["vote_average"]}\n')
+
 get_movies(args.type)
