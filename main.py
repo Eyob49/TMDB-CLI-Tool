@@ -61,7 +61,7 @@ def get_movies(category):
   category_keys = ["title","release_date", "vote_average"]
   
   while True:
-      user_choice = input("Choose how to sort the movies (title, release_date, or vote_average): ").strip().lower()
+      user_choice = input("Choose how to sort the movies:\n\n .title\n .release_date\n .vote_average\n\n ➡️ ").strip().lower()
       if user_choice in category_keys:
           break
       print("Please be sure you chose title, release_date or vote_average")
