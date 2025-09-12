@@ -60,11 +60,32 @@ def get_movies(category):
   
   category_keys = ["title","release_date", "vote_average"]
   
+    
+  except KeyError:
+    print("⚠️ Unexpected response format from API.")
+    return
+    
+  results = data.get("results", [])
+  
+  if not results:
+        print("⚠️ No movies found for this category.")
+        return
+
+  category_keys = {
+                  "t":"title",
+                  "d":"release_date",              
+                  "r":"vote_average"
+}
+  
   while True:
-      user_choice = input("Choose how to sort the movies:\n\n .title\n .release_date\n .vote_average\n\n ➡️ ").strip().lower()
-      if user_choice in category_keys:
+      user_choice = input("Choose how to sort the movies:\n\n .title(t)\n .release_date(d)\n .vote_average(r)\n\n ➡️ ").strip().lower()
+      if user_choice in category_keys.values():
           break
+      elif user_choice in category_keys.keys():
+        user_choice = category_keys.get(user_choice)
+        break
       print("Please be sure you chose title, release_date or vote_average")
+   
   
   sorted_data = sorted(data["results"], key=lambda item: item[user_choice])
   
