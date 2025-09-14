@@ -17,7 +17,7 @@ A simple Python command-line tool to fetch and display movies from [The Movie Da
 
 ---
 
-🛠️ Installation
+### 🛠️ Installation
 
 1.Clone this repository:
  ```bash
@@ -27,8 +27,10 @@ A simple Python command-line tool to fetch and display movies from [The Movie Da
  ```
 
 2.Install dependencies:
-- pip install -r requirements.txt
+ ```bash
+ - pip install -r requirements.txt
 
+ ```
 3.Set your TMDB API key as an environment variable:
 
 - export API_KEY = "your_api_key_here" # for Linux/Mac
