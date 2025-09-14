@@ -57,10 +57,10 @@ A simple Python command-line tool to fetch and display movies from [The Movie Da
 
 ### ⚠️ Valid Categories
 ```bash
- - popular
- - top_rated
- - upcoming
- - now_playing
+ - popular(p)
+ - top_rated(tr)
+ - upcoming(up)
+ - now_playing(np)
 
 ```
 ---
