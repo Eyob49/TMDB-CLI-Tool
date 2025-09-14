@@ -31,12 +31,14 @@ A simple Python command-line tool to fetch and display movies from [The Movie Da
  - pip install -r requirements.txt
 
  ```
-3.Set your TMDB API key as an environment variable:
+#### 3.Set your TMDB API key as an environment variable:
  ```bash
  - export API_KEY = "your_api_key_here" # for Linux/Mac
  
  - setx API_KEY "your_api_key_here"   # for Windows
  ```
+---
+
 ### ▶️ Usage
  
 #### Run the script with a category:
@@ -51,6 +53,8 @@ A simple Python command-line tool to fetch and display movies from [The Movie Da
 
       ⭐ Rating: 4.3
  ```
+---
+
 ### ⚠️ Valid Categories
 ```bash
  - popular
@@ -59,6 +63,7 @@ A simple Python command-line tool to fetch and display movies from [The Movie Da
  - now_playing
 
 ```
+---
 
 ### 🚀 Future Enhancements
 ```bash
@@ -66,6 +71,7 @@ A simple Python command-line tool to fetch and display movies from [The Movie Da
  - Add movie search by keyword (e.g., --search "Inception")
  - Export results to JSON/CSV file
 ```
+---
 
 ### 📜 License
 ```bash
