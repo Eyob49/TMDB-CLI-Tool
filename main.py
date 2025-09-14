@@ -29,7 +29,7 @@ def get_movies(category):
      category = category
   else:
    if len(category) <= 2:
-    console.print(f"⚠️ Invalid category short key: {category}. Try one of {', '.join(VALID_CATEGORIES.keys())}", style="bold red")
+    console.print(f"⚠️  Invalid category short key: {category}. Try one of {', '.join(VALID_CATEGORIES.keys())}", style="bold red")
    else:
      console.print(f"🚫 '{category}' is not a valid category. Try: popular, top_rated, upcoming, now_playing.", style="bold yellow")
    return
