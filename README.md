@@ -1,4 +1,4 @@
-🎬 Movie CLI (TMDB API)
+#🎬 Movie CLI (TMDB API)
 
 A simple Python command-line tool to fetch and display movies from [The Movie Database (TMDb)](https://www.themoviedb.org/). This project(https://roadmap.sh/projects/tmdb-cli) uses the TMDb API and supports different movie categories such as popular, top rated, upcoming, and now playing.
 
