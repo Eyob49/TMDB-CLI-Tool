@@ -10,9 +10,10 @@ A simple Python command-line tool to fetch and display movies from [The Movie Da
 
 ✨ Features
  - 🎥 Fetch movies by category (popular, top_rated, upcoming, now_playing).
- - 📆 Displays title, release date, and rating in a clean format.
-- 🚫 Handles invalid categories gracefully.
-- 🔐 Secure API key handling using environment variables.
+ - 🎨 Beautiful CLI output styled with the `rich` library.
+ - 📅 Displays title, release date, and rating in a clean table.
+ - 🚫 Handles invalid categories gracefully.
+ - 🔐 Secure API key handling using environment variables.
 
 ---
 
@@ -51,7 +52,6 @@ Run the script with a category:
 - now_playing
 
 🚀 Future Enhancements
-- Add colorful tables using the rich library for better CLI output
 - Implement pagination (view more than 1 page of results)
 - Add movie search by keyword (e.g., --search "Inception")
 - Export results to JSON/CSV file
