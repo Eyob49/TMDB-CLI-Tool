@@ -20,6 +20,7 @@ A simple Python command-line tool to fetch and display movies from [The Movie Da
 🛠️ Installation
 
 1.Clone this repository:
+ ```bash
  - git clone https://github.com/Eyob49/TMDB-CLI-Tool.git
  - cd TMDB-CLI-Tool
 
