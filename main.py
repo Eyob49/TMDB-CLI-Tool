@@ -4,13 +4,16 @@ import argparse
 import time
 from rich.console import Console
 from rich.table import Table
+from dotenv import load_dotenv
+
+load_dotenv()
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--type", "-t",type=str, help="Movie Category")
 
 args = parser.parse_args()
 
-api_key = os.environ["API_KEY"]
+api_key = os.getenv("API_KEY")
 console = Console()
 
 def get_movies(category):
