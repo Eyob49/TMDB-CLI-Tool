@@ -38,8 +38,8 @@ def get_movies(category):
    return
 
   
-  
-  url = f"https://api.themoviedb.org/3/movie/{category}?api_key={api_key}"
+  page = 1
+  url = f"https://api.themoviedb.org/3/movie/{category}?api_key={api_key}&page={page}"
 
   try:
     response = requests.get(url, timeout=10)
@@ -105,8 +105,21 @@ def get_movies(category):
     console.print(table)
 
   display_movies(sorted_data)
+ while page <= total_pages:
+    with console.status(f"Loading page {page} of {total_pages}...", spinner="runner"):
+      do_something_important()
+    get_movies(args.type)
+    if page < total_pages:
+      choice = Prompt.ask("\n[bold yellow]:backhand_index_pointing_right_medium_skin_tone: Do you want to see the next page?[/], choices=["y","n"], default="n")
+      if choice == "y":
+          page += 1
+          
+    else:
+        console.print(":party_popper:[bold blue]Done browsing movies![/]")
+  else:
+      console.print("[bold red]No more pages available.[/]")
+      break
 
-get_movies(args.type)
 
 
 
