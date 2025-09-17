@@ -68,7 +68,6 @@ A simple Python command-line tool to fetch and display movies from [The Movie Da
 
 ### 🚀 Future Enhancements
 ```bash
- - Implement pagination (view more than 1 page of results)
  - Add movie search by keyword (e.g., --search "Inception")
  - Export results to JSON/CSV file
 ```
