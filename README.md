@@ -49,9 +49,9 @@ A simple Python command-line tool to fetch and display movies from [The Movie Da
 
  - python main.py --search your_movie 
 
- #### OR
+   OR
 
- - python main.py --search your_movie --page 1,2,3....(depending on your choice)
+ - python main.py --search your_movie --page 1,2,3....(depends on your choice)
  ```
 ---
 
