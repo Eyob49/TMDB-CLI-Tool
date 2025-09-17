@@ -9,14 +9,58 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-parser = argparse.ArgumentParser()
-parser.add_argument("--type", "-t",type=str, help="Movie Category")
-
-args = parser.parse_args()
-
 api_key = os.getenv("API_KEY")
 
 console = Console()
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--type", "-t",type=str, help="Movie Category")
+parser.add_argument("--search", type=str ,help="Search movies by key word")
+parser.add_argument("--page", type=int , default=1, help="Page number (default: 1)")
+args = parser.parse_args()
+
+
+def fetch_movies(url):
+   response = requests.get(url, timeout=10)
+   response.raise_for_status()
+   return response.json()
+
+
+def get_movies_by_search(args.search):
+  try:
+   for movie in data["results]:
+      title = data["title"]
+      release_date = data["realease_date"]
+      rating = data["vote_average"]
+      console.print(f"[bold cyan]{title}[/] ({release_date}) - {rating}")
+  except requests.exceptions.RequestException:
+      console.print("⚠️  Oops! Couldn’t reach TMDB servers. Please check your internet.", style="bold red")
+      return
+  except KeyError:
+      console.print("⚠️  Unexpected response format from API.", style="bold red")
+      return
+  except Exception:
+      console.print("💥  Something went wrong! Please try again.", style="bold red")
+      return
+
+    results = data.get("title", [])
+    if not results:
+      console.print(f"😕  No {title} movie found. Try again later!", style="italic cyan")
+      return
+
+if args.search:
+  url = f"https://api.themoviedb.org/3/search/movie?api_key={api_key}&query={args.search}&page={args.page}"
+elif args.type:
+  url = f"https://api.themoviedb.org/3/movie/{category}?api_key={api_key}&page={page}"
+else:
+  console.print("[red] Please provide either --category or --search[/]")
+  
+data = fetch_movies(url)
+
+  
+    
+
+
 
 def get_movies(category):
 
@@ -73,7 +117,6 @@ def get_movies(category):
 
   page = 1
   while True:
-    url = f"https://api.themoviedb.org/3/movie/{category}?api_key={api_key}&page={page}"
     try:
       response = requests.get(url, timeout=10)
       response.raise_for_status()
