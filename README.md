@@ -65,16 +65,10 @@ A simple Python command-line tool to fetch and display movies from [The Movie Da
 ```
 ---
 
-### 🚀 Future Enhancements
-```bash
- - Add movie search by keyword (e.g., --search "Inception")
- - Export results to JSON/CSV file
-```
----
-
 ### 📜 License
 ```bash
 - This project is licensed under the MIT License.
+
 ```
 
 
