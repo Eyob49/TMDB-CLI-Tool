@@ -26,40 +26,26 @@ def fetch_movies(url):
    return response.json()
 
 
-def get_movies_by_search(args.search):
-  try:
-   for movie in data["results]:
-      title = data["title"]
-      release_date = data["realease_date"]
-      rating = data["vote_average"]
-      console.print(f"[bold cyan]{title}[/] ({release_date}) - {rating}")
-  except requests.exceptions.RequestException:
-      console.print("⚠️  Oops! Couldn’t reach TMDB servers. Please check your internet.", style="bold red")
-      return
-  except KeyError:
-      console.print("⚠️  Unexpected response format from API.", style="bold red")
-      return
-  except Exception:
-      console.print("💥  Something went wrong! Please try again.", style="bold red")
-      return
+def get_movies_by_search(search, data):
+    try:
+        for movie in data["results"]:
+            title = movie.get("title", "Unknown Title")
+            release_date = movie.get("release_date", "Unknown Date")
+            rating = movie.get("vote_average", "N/A")
+            console.print(f" Title: [bold cyan]{title}[/]\n Release Date: {release_date}\n Rating: {rating}\n") 
+    except requests.exceptions.RequestException:
+        console.print("⚠️  Oops! Couldn't reach TMDB servers. Please check your internet.", style="bold red")
+        return
+    except KeyError:
+        console.print("⚠️  Unexpected response format from API.", style="bold red")
+        return
+    except Exception:
+        console.print("💥  Something went wrong! Please try again.", style="bold red")
+        return
 
-    results = data.get("title", [])
-    if not results:
-      console.print(f"😕  No {title} movie found. Try again later!", style="italic cyan")
-      return
-
-if args.search:
-  url = f"https://api.themoviedb.org/3/search/movie?api_key={api_key}&query={args.search}&page={args.page}"
-elif args.type:
-  url = f"https://api.themoviedb.org/3/movie/{category}?api_key={api_key}&page={page}"
-else:
-  console.print("[red] Please provide either --category or --search[/]")
-  
-data = fetch_movies(url)
-
-  
-    
-
+    if not data.get("results"):
+        console.print(f"😕  No movies found for '{search}'. Try again later!", style="italic cyan")
+        return
 
 
 def get_movies(category):
@@ -116,11 +102,11 @@ def get_movies(category):
     console.print(table)
 
   page = 1
+ 
   while True:
     try:
-      response = requests.get(url, timeout=10)
-      response.raise_for_status()
-      data = response.json()
+      url = f"https://api.themoviedb.org/3/movie/{category}?api_key={api_key}&page={page}"
+      data = fetch_movies(url)
       total_pages = data["total_pages"]
     except requests.exceptions.RequestException:
       console.print("⚠️  Oops! Couldn’t reach TMDB servers. Please check your internet.", style="bold red")
@@ -156,10 +142,13 @@ def get_movies(category):
       console.print("[bold red]No more pages available.[/]")
       break
 
-get_movies(args.type)
-
-
-
-
-
-
+if __name__ == "__main__":
+ if args.search:
+  url = f"https://api.themoviedb.org/3/search/movie?api_key={api_key}&query={args.search}&page={args.page}"
+  data = fetch_movies(url)
+  get_movies_by_search(args.search, data)
+ elif args.type:
+   get_movies(args.type)
+ else:
+  console.print("[red] Please provide either --category or --search[/]")
+  
