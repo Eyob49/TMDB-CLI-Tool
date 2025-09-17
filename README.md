@@ -13,6 +13,7 @@ A simple Python command-line tool to fetch and display movies from [The Movie Da
  - 🎨 Beautiful CLI output styled with the `rich` library.
  - 📅 Displays title, release date, and rating in a clean table.
  - 📄 Pagination support for navigating multiple  pages of results
+ - 🔍 Search movies by keyword
  - 🚫 Handles invalid categories gracefully.
  - 🔐 Secure API key handling using environment variables.
 
