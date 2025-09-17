@@ -43,9 +43,10 @@ A simple Python command-line tool to fetch and display movies from [The Movie Da
 
 ### ▶️ Usage
  
-#### Run the script with a category:
+#### Run the script with a category or movie:
  ```bash
  - python main.py --type popular
+ - python main.py --search your_movie 
 
  - Example output:
 
