@@ -46,15 +46,12 @@ A simple Python command-line tool to fetch and display movies from [The Movie Da
 #### Run the script with a category or movie:
  ```bash
  - python main.py --type popular
+
  - python main.py --search your_movie 
 
- - Example output:
+ ####OR
 
-  -   🎬 Title: War of the Worlds
-
-      📅 Release: 2025-07-29
-
-      ⭐ Rating: 4.3
+ - python main.py --search your_movie --page 1,2,3....(depending on your choice)
  ```
 ---
 
